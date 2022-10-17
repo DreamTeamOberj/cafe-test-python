@@ -1,8 +1,15 @@
 class MachineACafe():
-    def insererRendreMonnaie(argent):
-        argent = argent - 40
+    
+    prix = 40
+    
+    def payerCafe(self, argent):
+        argent = argent - self.prix
         return argent
-
+    
+    def rendreMonnaie(self, argent):
+        argent = argent + self.prix
+        return argent
+    
     def nombreGobelets(gobelets):
         return gobelets
     
