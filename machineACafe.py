@@ -1,3 +1,6 @@
+from sqlalchemy import true
+
+
 class MachineACafe():
     
     prix = 40
@@ -15,8 +18,11 @@ class MachineACafe():
     
     def servirCafe():
         print("Le cafe est servi !")
+        return True
+
     
     def donnerGobelet():
         gobelets = gobelets - 1
         print("Il reste " + gobelets + " gobelets")
+        return True
         

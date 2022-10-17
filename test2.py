@@ -1,5 +1,5 @@
 import unittest
-from fonction import MachineACafe
+from machineACafe import MachineACafe
 
 class TestPython(unittest.TestCase):
     global argent 
