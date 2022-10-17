@@ -1,0 +1,2 @@
+class TestMachineCafe():
+    def argentRendu():
