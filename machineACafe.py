@@ -16,7 +16,7 @@ class MachineACafe():
             pieces = pieces + 1
             valueTot = valueTot + valeur
         else :
-            self.rembourser(self, valeur)
+            self.rembourser(valueTot)
 
     def payerCafe(self, argent):
         argent -= self.prix
