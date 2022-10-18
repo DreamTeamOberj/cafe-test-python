@@ -2,6 +2,8 @@ import random
 class MachineACafe():
     
     prix = 40
+    cafe = 100
+    gobelets = 100
     
     def payerCafe(self, argent):
         argent = argent - self.prix
@@ -11,24 +13,17 @@ class MachineACafe():
         argent = argent + self.prix
         return argent
     
-    def nombreGobelets(gobelets):
-        return gobelets
+    def nombreGobelets(self):
+        return self.gobelets
     
-    def servirCafe():
+    def servirCafe(self):
+        self.cafe = self.cafe - 1
         print("Le cafe est servi !")
         return True
 
+    
     def donnerGobelet():
-        gobelets = random.randint(1,10)
         gobelets = gobelets - 1
-        print("Il reste " + str(gobelets) + " gobelets")
+        print("Il reste " + gobelets + " gobelets")
         return True
-
-    def sucreButton():
-        pass
-
-    def ajoutSucre():
-        pass
         
-    def cancelButton():
-        pass
