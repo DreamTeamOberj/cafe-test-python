@@ -1,8 +1,11 @@
 class MachineACafe():
     
     prix = 40
-    cafe = 100
-    gobelets = 100
+    cafe_max = 100
+    gobelets_max = 100
+    cafe = cafe_max
+    gobelets = gobelets_max
+    
     eau = True
     tasseDetectee = False
 
@@ -55,3 +58,16 @@ class MachineACafe():
         print("\nIl reste " + str(self.gobelets) + " gobelets")
         return True
     
+    def remettreGobelet(self, gobeletsAjout):
+        self.gobelets = self.gobelets + gobeletsAjout
+        if self.gobelets > self.gobelets_max:
+            self.gobelets = self.gobelets_max
+        print("Il y a " + str(self.gobelets) + " gobelets")
+        return self.gobelets
+    
+    def remettreCafe(self,cafeAjout):
+        self.cafe = self.cafe + cafeAjout
+        if self.cafe > self.cafe_max:
+            self.cafe = self.cafe_max
+        print("Il y a " + str(self.cafe) + " cafe")  
+        return self.cafe     
