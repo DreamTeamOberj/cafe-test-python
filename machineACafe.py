@@ -5,7 +5,7 @@ class MachineACafe():
     gobelets_max = 100
     cafe = cafe_max
     gobelets = gobelets_max
-    
+    sucre = 200
     eau = True
     tasseDetectee = False
 
@@ -51,6 +51,11 @@ class MachineACafe():
     def servirCafe(self):
         self.cafe = self.cafe - 1
         print("\nLe cafe est servi ! Il en reste " + str(self.cafe))
+
+    def ajoutSucre(self):
+        self.sucre = self.sucre - 1
+        print("\n Ajout du sugar daddy.")
+        return self.sucre
     
     def donnerGobelet(self):
         self.gobelets = self.gobelets - 1

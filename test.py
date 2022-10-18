@@ -72,6 +72,23 @@ class TestMachine(unittest.TestCase):
 
         self.assertEqual(valueTot, machine.rembourser(argentDepart))
 
+    def test_ajout_sucre(self):
+        machine = MachineACafe()
+        sucreDepart = machine.sucre
+        sucre = sucreDepart
+        argentDepart = 40
+        argent = argentDepart
+        cafeDepart = machine.cafe
+        gobeletsDepart = machine.gobelets
+        
+        argent = machine.payerCafe(argent)
+        sucre = machine.ajoutSucre()
+        
+        self.assertEqual(argent, (argentDepart - machine.prix))
+        self.assertEqual(machine.cafe, (cafeDepart - 1))
+        self.assertEqual(machine.gobelets, (gobeletsDepart - 1))
+        self.assertEqual(sucre, (sucreDepart - 1))
+
     def testCafeValeur(self):
         machine = MachineACafe()
         argent = 40
