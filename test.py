@@ -102,5 +102,19 @@ class TestMachine(unittest.TestCase):
         self.assertEqual(machine.gobelets, gobeletsDepart)
         self.assertEqual(machine.cafe, (cafeDepart - 1))
         
+
+    def testNotEnoughMoney(self):
+        machine = MachineACafe()
+        argentDepart = 30
+        argent = argentDepart
+        cafeDepart = machine.cafe
+        gobeletsDepart = machine.gobelets
+
+        argent = machine.payerCafe(argent)
+        
+        self.assertEqual(machine.gobelets, gobeletsDepart)
+        self.assertEqual(machine.cafe, cafeDepart)
+        self.assertEqual(argent, argentDepart)
+
 if __name__ == '__main__':
     unittest.main()
