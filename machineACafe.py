@@ -1,6 +1,4 @@
-from sqlalchemy import true
-
-
+import random
 class MachineACafe():
     
     prix = 40
@@ -20,9 +18,17 @@ class MachineACafe():
         print("Le cafe est servi !")
         return True
 
-    
     def donnerGobelet():
+        gobelets = random.randint(1,10)
         gobelets = gobelets - 1
-        print("Il reste " + gobelets + " gobelets")
+        print("Il reste " + str(gobelets) + " gobelets")
         return True
+
+    def sucreButton():
+        pass
+
+    def ajoutSucre():
+        pass
         
+    def cancelButton():
+        pass
