@@ -8,14 +8,22 @@ class MachineACafe():
     gobelets = 100
     eau = True
     tasseDetectee = False
-    
+
+    def mettrePiece(self, valeur):
+        pieces = 0
+        valueTot = 0
+        if pieces <= 4 :
+            pieces = pieces + 1
+            valueTot = valueTot + valeur
+        else :
+            self.rembourser(self, valeur)
+
     def payerCafe(self, argent):
         argent -= self.prix
         argent = self.operations(argent)
         return argent
     
     def rembourser(self, argent):
-        argent += self.prix
         return argent
 
     
@@ -44,4 +52,4 @@ class MachineACafe():
         self.gobelets = self.gobelets - 1
         print("\nIl reste " + str(self.gobelets) + " gobelets")
         return True
-        
+    
