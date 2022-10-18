@@ -1,6 +1,3 @@
-import random
-
-from sqlalchemy import true
 class MachineACafe():
     
     prix = 40
