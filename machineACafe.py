@@ -7,6 +7,7 @@ class MachineACafe():
     cafe = 100
     gobelets = 100
     eau = True
+    tasseDetectee = False
 
     def mettrePiece(self, valeur):
         pieces = 0
@@ -18,6 +19,7 @@ class MachineACafe():
             self.rembourser(self, valeur)
 
     def payerCafe(self, argent):
+        argent -= self.prix
         argent = self.operations(argent)
         return argent
     
@@ -28,16 +30,16 @@ class MachineACafe():
     def operations(self, argent):
         if self.gobelets == 0:
             print("\nPlus de gobelets !")
-            self.rembourser(argent)
+            argent = self.rembourser(argent)
         elif self.cafe == 0:
             print("\nPlus de café !")
-            self.rembourser(argent)
+            argent = self.rembourser(argent)
         elif self.eau == False:
             print("\nPas d'eau !")
-            self.rembourser(argent)
-            
-        else:         
-            self.donnerGobelet()
+            argent = self.rembourser(argent) 
+        else:
+            if self.tasseDetectee == False:  
+                self.donnerGobelet()
             self.servirCafe()
         
         return argent
