@@ -19,8 +19,11 @@ class MachineACafe():
             self.rembourser(valueTot)
 
     def payerCafe(self, argent):
-        argent -= self.prix
-        argent = self.operations(argent)
+        if argent >= self.prix:
+            argent = self.operations(argent)
+        else:
+            argent = self.rembourser(argent)
+              
         return argent
     
     def rembourser(self, argent):
@@ -28,25 +31,21 @@ class MachineACafe():
 
     
     def operations(self, argent):
-
-        if argent >= self.prix:
-            if self.gobelets == 0:
-                print("\nPlus de gobelets !")
-                argent = self.rembourser(argent)
-            elif self.cafe == 0:
-                print("\nPlus de café !")
-                argent = self.rembourser(argent)
-            elif self.eau == False:
-                print("\nPas d'eau !")
-                argent = self.rembourser(argent)
-                
-            else:
-                if self.tasseDetectee == False:  
-                    self.donnerGobelet()
-                self.servirCafe()
-
+        if self.gobelets == 0:
+            # print("\nPlus de gobelets !")
+            argent = self.rembourser(argent)
+        elif self.cafe == 0:
+            # print("\nPlus de café !")
+            argent = self.rembourser(argent)
+        elif self.eau == False:
+            # print("\nPas d'eau !")
+            argent = self.rembourser(argent)  
         else:
-            argent = self.rembourser(argent)    
+            argent -= self.prix
+            if self.tasseDetectee == False:  
+                self.donnerGobelet()
+            self.servirCafe()
+          
         return argent
 
     def servirCafe(self):
