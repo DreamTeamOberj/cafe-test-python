@@ -21,7 +21,6 @@ class MachineACafe():
         print("Le cafe est servi !")
         return True
 
-    
     def donnerGobelet():
         gobelets = gobelets - 1
         print("Il reste " + gobelets + " gobelets")
