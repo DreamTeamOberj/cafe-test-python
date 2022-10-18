@@ -3,7 +3,20 @@ import unittest
 from machineACafe import MachineACafe
 
 class TestMachine(unittest.TestCase):
-
+    
+    def test_coffee_coule(self):
+        machine = MachineACafe()
+        argentDepart = 40
+        argent = argentDepart
+        cafeDepart = machine.cafe
+        gobeletsDepart = machine.gobelets
+        
+        argent = machine.payerCafe(argent)
+        
+        self.assertEqual(argent, (argentDepart - machine.prix))
+        self.assertEqual(machine.cafe, (cafeDepart - 1))
+        self.assertEqual(machine.gobelets, (gobeletsDepart - 1))
+    
     def testRendreArgentNoCaf(self):
         machine = MachineACafe()
         argentDepart = 40
@@ -46,7 +59,19 @@ class TestMachine(unittest.TestCase):
         self.assertEqual(machine.gobelets, gobeletsDepart)
         self.assertEqual(machine.cafe, cafeDepart)
         self.assertEqual(argent, argentDepart)
-        
+
+    def test_quatre_piece(self):
+        machine = MachineACafe()
+        argentDepart = 80
+        i = 0
+        valueTot = 0
+    
+        for i in range(4) :
+            valueTot = valueTot + 20
+            machine.mettrePiece(20)
+
+        self.assertEqual(valueTot, machine.rembourser(argentDepart))
+
     def testCafeValeur(self):
         machine = MachineACafe()
         argent = 40
@@ -77,6 +102,7 @@ class TestMachine(unittest.TestCase):
         self.assertEqual(machine.gobelets, gobeletsDepart)
         self.assertEqual(machine.cafe, (cafeDepart - 1))
         
+
     def testNotEnoughMoney(self):
         machine = MachineACafe()
         argentDepart = 30
