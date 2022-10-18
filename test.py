@@ -7,35 +7,30 @@ class TestMachine(unittest.TestCase):
     def testRendreArgentNoCaf(self):
         machine = MachineACafe()
         argentDepart = 40
-        cafeDepart = 0
-        gobeletsDepart = machine.gobelets
         argent = argentDepart
-        cafe = cafeDepart
-        gobelets = gobeletsDepart
+        machine.cafe = 0
+        cafeDepart = machine.cafe
+        gobeletsDepart = machine.gobelets
         
-        machine.payerCafe(argent)
-        if cafe == 0:
-            machine.rendreMonnaie(argent)
+        argent = machine.payerCafe(argent)
         
-        self.assertEqual(gobelets, gobeletsDepart)
-        self.assertEqual(cafe, cafeDepart)
+        self.assertEqual(machine.gobelets, gobeletsDepart)
+        self.assertEqual(machine.cafe, cafeDepart)
         self.assertEqual(argent, argentDepart)
+
 
     def testRendreArgentNoGob(self):
         machine = MachineACafe()
         argentDepart = 40
-        cafeDepart = machine.cafe
-        gobeletsDepart = 0
         argent = argentDepart
-        cafe = cafeDepart
-        gobelets = gobeletsDepart
+        cafeDepart = machine.cafe
+        machine.gobelets = 0
+        gobeletsDepart = machine.gobelets
         
-        machine.payerCafe(argent)
-        if gobelets == 0:
-            machine.rendreMonnaie(argent)
+        argent = machine.payerCafe(argent)
         
-        self.assertEqual(gobelets, gobeletsDepart)
-        self.assertEqual(cafe, cafeDepart)
+        self.assertEqual(machine.gobelets, gobeletsDepart)
+        self.assertEqual(machine.cafe, cafeDepart)
         self.assertEqual(argent, argentDepart)
         
 

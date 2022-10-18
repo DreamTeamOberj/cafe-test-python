@@ -8,7 +8,7 @@ class MachineACafe():
     gobelets = 100
     
     def payerCafe(self, argent):
-        argent = argent - self.prix
+        argent = self.operations(argent)
         return argent
     
     def rendreMonnaie(self, argent):
@@ -18,11 +18,22 @@ class MachineACafe():
     def nombreGobelets(self):
         return self.gobelets
     
+    def operations(self, argent):
+        if self.gobelets == 0:
+            print("Plus de gobelets")
+            self.rendreMonnaie(argent)
+        elif self.cafe == 0:
+            print("Plus de café")
+            self.rendreMonnaie(argent)
+        else:         
+            self.donnerGobelet()
+            self.servirCafe()
+        
+        return argent
+
     def servirCafe(self):
         self.cafe = self.cafe - 1
-        print("Le cafe est servi !")
-        return True
-
+        print("Le cafe est servi ! Il en reste " + str(self.cafe))
     
     def donnerGobelet(self):
         self.gobelets = self.gobelets - 1
