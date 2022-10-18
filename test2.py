@@ -6,7 +6,7 @@ class TestPython(unittest.TestCase):
     argent = 40
 
     global machine 
-    machine = MachineACafe
+    machine = MachineACafe()
 
     def test_coffee_coule(self):
         self.assertEqual(40, argent)
@@ -29,6 +29,9 @@ class TestPython(unittest.TestCase):
         self.assertTrue(machine.cancelButton())
         self.assertFalse(machine.servirCafe())
         self.assertTrue(machine.rendreMonnaie(self, argent))
+
+   
+
 
 if __name__ == '__main__':
     unittest.main()
