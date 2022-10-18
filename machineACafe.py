@@ -28,8 +28,7 @@ class MachineACafe():
             argent = self.rembourser(argent)
         elif self.eau == False:
             print("\nPas d'eau !")
-            argent = self.rembourser(argent)
-            
+            argent = self.rembourser(argent) 
         else:
             if self.tasseDetectee == False:  
                 self.donnerGobelet()

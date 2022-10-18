@@ -3,7 +3,20 @@ import unittest
 from machineACafe import MachineACafe
 
 class TestMachine(unittest.TestCase):
-
+    
+    def test_coffee_coule(self):
+        machine = MachineACafe()
+        argentDepart = 40
+        argent = argentDepart
+        cafeDepart = machine.cafe
+        gobeletsDepart = machine.gobelets
+        
+        argent = machine.payerCafe(argent)
+        
+        self.assertEqual(argent, (argentDepart - machine.prix))
+        self.assertEqual(machine.cafe, (cafeDepart - 1))
+        self.assertEqual(machine.gobelets, (gobeletsDepart - 1))
+    
     def testRendreArgentNoCaf(self):
         machine = MachineACafe()
         argentDepart = 40
