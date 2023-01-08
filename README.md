@@ -1,2 +1,8 @@
 # cafe-test-python
-test test test test test
+
+Composition du groupe :
+Yohann Durel
+Romain Martineau
+Antoine Deyris
+Gabriel Filiot
+Juliette Raynaud
